@@ -1,133 +1,126 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafetería Insana</title>
+    <title>Cifrador César</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #bfab91;
-        }
-        header {
-            position: relative;
-            color: #fff;
-            padding: 20px;
+            font-family: 'Inconsolata', monospace;
             text-align: center;
-        }
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://i.blogs.es/1a5171/granos-de-cafe/1366_2000.jpeg'); /* Cambia 'tu_imagen_de_fondo.jpg' por la ruta de tu imagen de fondo */
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-            filter: blur(0);
-            transition: filter 0.3s ease-in-out;
-        }
-        header:hover::before {
-            filter: blur(5px);
+            background-color: #290d29; /* Fondo morado oscuro */
+            color: #c9c9c9; /* Texto gris claro */
         }
         h1 {
-            font-size: 36px;
+            color: #a357f7; /* Color morado claro */
         }
-        nav {
-            background-color: #c8baa5;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        .container {
-            max-width: 1200px;
+        #container {
+            width: 400px;
             margin: 0 auto;
+            text-align: left;
+            background-color: #3a2038; /* Fondo morado oscuro más claro */
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px #1e0e1e; /* Sombra morada oscura */
         }
-        .product {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin: 20px;
-            text-align: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            width: 30%;
-            box-sizing: border-box;
+        label {
+            color: #a357f7; /* Color morado claro */
         }
-        .product img {
-            max-width: 100%;
-            height: auto;
+        input[type="text"], input[type="range"] {
+            background-color: #3d2b40; /* Morado oscuro aún más claro */
+            color: #c9c9c9;
+            border: 1px solid #291029; /* Morado oscuro */
+            border-radius: 5px;
+            padding: 5px;
         }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
+        input[type="text"]:focus, input[type="range"]:focus {
+            outline: none;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        button {
+            background-color: #a357f7; /* Morado claro */
+            color: #3a2038; /* Texto morado oscuro más claro */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #7e44e3; /* Morado un poco más oscuro en el hover */
+        }
+        #result {
+            color: #ffdb58; /* Amarillo brillante para el resultado */
+        }
+        #shift {
+            color: #4CAF50; /* Verde para el desplazamiento */
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Cafetería Insana</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="https://www.pornhub.com" target="_blank">Productos</a></li>
-            <li><a href="https://www.xvideos.es/" target="_blank">Nosotros</a></li>
-            <li><a href="https://www.xnxx.com/" target="_blank">Contacto</a></li>
-        </ul>
-    </nav>    
-    <div class="container">
-        <section id="productos">
-            <h2>Nuestros Productos</h2>
-            <div class="product">
-                <img src="https://tienda.prudence.com.mx/cdn/shop/products/FrenteCafe_1200x1200.png?v=1624918959" alt="Café 1">
-                <h3>Café Especial 1</h3>
-                <p>Descripción del café especial 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Precio: $5.99</p>
-                <button>Comprar</button>
-            </div>
-            <div class="product">
-                <img src="https://img.freepik.com/vector-gratis/taza-realista-cafe-negro-elaborado-ilustracion-vector-platillo_1284-66002.jpg?w=2000" alt="Café 2">
-                <h3>Café Especial 2</h3>
-                <p>Descripción del café especial 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Precio: $6.99</p>
-                <button>Comprar</button>
-            </div>
-            <div class="product">
-                <img src="https://www.dondeir.com/wp-content/uploads/2023/07/taza-de-galleta-2.jpg" alt="Café 3">
-                <h3>Café Especial 3</h3>
-                <p>Descripción del café especial 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Precio: $7.99</p>
-                <button>Comprar</button>
-            </div>
-        </section>
-        <section id="nosotros">
-            <h2>Sobre Nosotros</h2>
-            <p>Somos una cafetería bien insana yapasionada por el café de alta calidad. Nuestros granos son cuidadosamente seleccionados y tostados para ofrecer una experiencia excepcional a nuestros clientes.</p>
-        </section>
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>¡Contáctanos para cualquier consulta o pedido!</p>
-            <p>Email: comomegustalapolla@polla.com</p>
-            <p>Teléfono: doxeado tuipe 195 0 3 236</p>
-        </section>
+    <h1>Cifrador César</h1>
+    <div id="container">
+        <p>El cifrado César es un cifrado de sustitución simple en el que cada letra en el texto original se desplaza un número fijo de posiciones hacia la derecha en el alfabeto.</p>
+
+        <form id="caesar-form">
+            <label for="message">Mensaje:</label>
+            <input type="text" id="message" name="message" required><br>
+
+            <label for="shift">Desplazamiento:</label>
+            <input type="range" id="shift" name="shift" min="1" max="25" value="1" oninput="updateShiftValue()">
+            <span id="shift-value">1</span><br>
+
+            <label for="result">Resultado:</label>
+            <input type="text" id="result" name="result" readonly>
+
+            <button type="button" onclick="encrypt()">Cifrar</button>
+        </form>
     </div>
-    <footer>
-        <p>&copy; 2023 Tu Cafetería</p>
-    </footer>
+
+    <script>
+        function updateShiftValue() {
+            const shiftValue = document.getElementById('shift').value;
+            const shiftElement = document.getElementById('shift');
+            const shiftTextElement = document.getElementById('shift-value');
+
+            shiftTextElement.textContent = shiftValue;
+
+            // Cambiar el color del valor del desplazamiento según su valor
+            if (shiftValue < 10) {
+                shiftTextElement.style.color = '#4CAF50'; /* Verde si es bajo */
+            } else if (shiftValue > 15) {
+                shiftTextElement.style.color = '#FF5722'; /* Rojo si es alto */
+            } else {
+                shiftTextElement.style.color = '#FFA500'; /* Gris claro predeterminado */
+            }
+        }
+
+        function encrypt() {
+            const message = document.getElementById('message').value;
+            const shift = parseInt(document.getElementById('shift').value);
+            const result = document.getElementById('result');
+
+            let encryptedMessage = '';
+
+            for (let i = 0; i < message.length; i++) {
+                let char = message[i];
+
+                if (char.match(/[a-z]/i)) {
+                    const isUpperCase = char === char.toUpperCase();
+                    char = String.fromCharCode(((char.charCodeAt(0) - (isUpperCase ? 65 : 97) + shift) % 26) + (isUpperCase ? 65 : 97));
+                }
+
+                encryptedMessage += char;
+            }
+
+            result.value = encryptedMessage;
+        }
+    </script>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <div class="credit">Created by: Edgar Hdz 2157724</div>
+    </body>
 </body>
 </html>
